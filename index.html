@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@1,500&display=swap" rel="stylesheet">
+    <title>Sunshine</title>
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            background-image: url('https://asset.kompas.com/crops/vQZcqRKbpOyrB-BXh0Y0cP-tLC8=/90x60:810x540/750x500/data/photo/2022/08/16/62fb9a08c750d.jpeg');
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        .slideshow {
+            height: 100vh;
+            width: 100%;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            overflow-y: auto;
+            top: 0;
+            left: 0;
+        }
+
+        .tophalf {
+            display: flex;
+            overflow: hidden;
+            transition: all 0.3s;
+            flex-direction: column;
+            padding: 0.5em;
+            padding-top: 0.5em;
+            padding-bottom: 0.5em;
+            border: 1px solid black;
+            width: 100%;
+        }
+
+        .heading {
+            margin: 0;
+            text-align: left;
+            white-space: nowrap;
+            font-family: 'Prompt', sans-serif;
+            border: 1px solid black;
+        }
+
+        .later {
+            height: 100vh;
+        }
+
+        .subheading {
+            border: 1px solid black;
+            margin: 0;
+            font-size: 1.2rem;
+            color: #333;
+        }
+
+        .nav-links {
+            border: 1px solid black;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            margin: 0 1em;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #f7941d;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slideshow">
+        <div class="tophalf">
+            <div class="subeading">The Counselling Cell of IITH</div>
+            <h1 class="heading" id="dynamicText">Sunshine</h1>
+            <div class="nav-links">
+                <a href="#">Home</a>
+                <a href="#">Team</a>
+                <a href="#">About Us</a>
+                <a href="#">Events</a>
+                <a href="#">FAQs</a>
+            </div>
+        </div>
+    </div>
+    <div class="later">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga dolores omnis deleniti neque non odit excepturi
+        sit, reprehenderit saepe! Asperiores ab deleniti ea esse. Sunt exercitationem qui vero corporis ducimus!
+    </div>
+    <script>
+        // Dynamically adjust font size based on scroll position and screen width
+        function adjustFontSize() {
+            const textDiv = document.getElementById("dynamicText");
+            const scrollPercentage = (window.scrollY / (document.body.scrollHeight - window.innerHeight));
+            let initialFontSize;
+            initialFontSize = window.innerWidth / 7;
+
+            let minFontSize = window.innerWidth / 300;
+            const maxFontSize = initialFontSize;
+            const rateOfDecrease = 1.6;
+
+            const fontSize = initialFontSize - scrollPercentage * rateOfDecrease * (initialFontSize - minFontSize);
+            textDiv.style.fontSize = `${fontSize}px`;
+        }
+
+        // Call the function initially and whenever the window is scrolled
+        window.addEventListener("load", adjustFontSize);
+        window.addEventListener("scroll", adjustFontSize);
+        window.addEventListener("resize", adjustFontSize);
+    </script>
+</body>
+
+</html>
