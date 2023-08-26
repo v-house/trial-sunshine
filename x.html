@@ -14,8 +14,30 @@
             margin: 0;
             padding: 0;
             background-image: url('https://media.licdn.com/dms/image/C4E0DAQGte6ohMgwdWQ/learning-public-crop_288_512/0/1615914751307?e=2147483647&v=beta&t=63B2jPl5hwFNmSFjTIydZfP0SOX_D0cAo_FSVQWDw-s');
+            /* Replace with your image URL */
             background-size: cover;
             background-attachment: fixed;
+            font-family: 'Prompt', sans-serif;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 1em;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: #333;
+            margin: 0 1em;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .navbar a:hover {
+            color: #f7941d;
         }
 
         .slideshow {
@@ -23,6 +45,8 @@
             width: 100%;
             margin: 0;
             display: flex;
+            flex-direction: column;
+            justify-content: center;
             align-items: center;
             overflow-y: auto;
             top: 0;
@@ -31,90 +55,53 @@
 
         .tophalf {
             display: flex;
+            flex-direction: column;
+            align-items: center;
             overflow: hidden;
             transition: all 0.3s;
-            flex-direction: column;
-            padding: 0.5em;
-            padding-top: 0.5em;
-            padding-bottom: 0.5em;
-            border: 1px solid black;
-            width: 100%;
+            padding: 1em;
         }
 
         .heading {
             margin: 0;
             text-align: left;
             white-space: nowrap;
-            font-family: 'Prompt', sans-serif;
-            border: 1px solid black;
-        }
-
-        .later {
-            height: 100vh;
+            font-size: 2rem;
         }
 
         .subheading {
-            border: 1px solid black;
             margin: 0;
             font-size: 1.2rem;
             color: #333;
         }
 
-        .nav-links {
-            border: 1px solid black;
-            display: flex;
-            justify-content: space-evenly;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: #333;
-            margin: 0 1em;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: #f7941d;
+        .later {
+            height: 100vh;
         }
     </style>
 </head>
 
 <body>
-    <div class="slideshow">
-        <div class="tophalf">
-            <div class="subeading">The Counselling Cell of IITH</div>
-            <h1 class="heading" id="dynamicText">Sunshine</h1>
-            <div class="nav-links">
-                <a href="#">Logo</a>
-                <a href="#">Home</a>
-                <a href="#">Team</a>
-                <a href="#">About Us</a>
-                <a href="#">Events</a>
-                <a href="#">FAQs</a>
-            </div>
+    <div class="navbar">
+        <div class="logo">
+            <span class="subheading">Logo</span>
+        </div>
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">Team</a>
+            <a href="#">About Us</a>
+            <a href="#">Events</a>
+            <a href="#">FAQs</a>
         </div>
     </div>
-
-    <style>
-        .button {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #f7941d;
-            color: white;
-            border: none;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .button:hover {
-            background-color: #e3831f;
-        }
-    </style>
+    <div class="slideshow">
+        <div class="tophalf">
+            <h1 class="heading" id="dynamicText">Sunshine</h1>
+        </div>
+    </div>
     <div class="later">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga dolores omnis deleniti neque non odit excepturi
         sit, reprehenderit saepe! Asperiores ab deleniti ea esse. Sunt exercitationem qui vero corporis ducimus!
-        <a class="button" href="x.html">Option two</a>
     </div>
     <script>
         // Dynamically adjust font size based on scroll position and screen width
